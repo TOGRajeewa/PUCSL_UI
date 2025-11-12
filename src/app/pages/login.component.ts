@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RoleSelectionModalComponent, UserRole } from '../components/role-selection-modal.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RoleSelectionModalComponent],
   template: `
     <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4 sm:p-6 lg:p-8">
       <div class="login-wrap flex flex-col lg:flex-row w-full max-w-7xl bg-white rounded-lg lg:rounded-xl shadow-2xl overflow-hidden">
@@ -129,12 +130,20 @@ import { FormsModule } from '@angular/forms';
         </div>
       </div>
     </div>
+
+    <!-- Role Selection Modal -->
+    <app-role-selection-modal 
+      *ngIf="showRoleModal"
+      (roleSelected)="onRoleSelected($event)"
+      (logout)="onLogout()">
+    </app-role-selection-modal>
   `,
 })
 export class LoginComponent {
   email = '';
   password = '';
   showPassword = false;
+  showRoleModal = false;
 
   constructor(private router: Router) {}
 
@@ -143,6 +152,28 @@ export class LoginComponent {
   }
 
   onSignIn() {
-    this.router.navigate(['/dashboard']);
+    // Show role selection modal after sign in
+    this.showRoleModal = true;
+  }
+
+  onRoleSelected(role: UserRole) {
+    this.showRoleModal = false;
+    
+    // Navigate based on role selection
+    if (role === 'admin') {
+      this.router.navigate(['/dashboard']);
+    } else if (role === 'dataSubmitter') {
+      this.router.navigate(['/data-submitter-dashboard']);
+    } else if (role === 'dataAccepter') {
+      // Navigate to data accepter dashboard (using existing dashboard for now)
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
+  onLogout() {
+    this.showRoleModal = false;
+    // Clear any stored data and stay on login page
+    this.email = '';
+    this.password = '';
   }
 }

@@ -7,11 +7,13 @@ import { NewWizardComponent } from './pages/new-wizard.component';
 import { DataFileSummaryComponent } from './pages/data-file-summary.component';
 import { DataTableSummaryComponent } from './pages/data-table-summary.component';
 import { UserRoleManagementComponent } from './pages/user-role-management.component';
+import { DataSubmitterDashboardComponent } from './pages/data-submitter-dashboard.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: OverviewComponent },
+  { path: 'data-submitter-dashboard', component: DataSubmitterDashboardComponent },
   { path: 'overview', component: OverviewComponent },
   { path: 'template-management', component: TemplateManagementComponent },
   { path: 'new-template', component: NewWizardComponent, data: { mode: 'template' } },
