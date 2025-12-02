@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
+import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
 
 @Component({
   selector: "app-data-submitter-dashboard",
@@ -116,24 +117,6 @@ export class DataSubmitterDashboardComponent {
     {
       text: "New Template Created: Energy Storage Q3 2024",
       time: "2 hours ago",
-    },
-  ];
-
-  navItems = [
-    {
-      icon: "https://api.builder.io/api/v1/image/assets/TEMP/cc98f667230941ae3075229caf079ef6c36fdd45?width=48",
-    },
-    {
-      icon: "https://api.builder.io/api/v1/image/assets/TEMP/452234bb60d99b356ba6311e6e799e095314ca87?width=48",
-    },
-    {
-      icon: "https://api.builder.io/api/v1/image/assets/TEMP/c7415cd43a008aac4e7ab1eb8c869bff352ff0a9?width=48",
-    },
-    {
-      icon: "https://api.builder.io/api/v1/image/assets/TEMP/c8ba69aa9ba83c652dd93af762ca702c4b345901?width=48",
-    },
-    {
-      icon: "https://api.builder.io/api/v1/image/assets/TEMP/c1953e0eb7935f9d21a83a40acc77aef50f75e90?width=48",
     },
   ];
 }
