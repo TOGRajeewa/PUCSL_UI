@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
+import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
 
 @Component({
   selector: "app-data-submitter-dashboard",
