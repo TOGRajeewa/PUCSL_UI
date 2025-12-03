@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
 
 @Component({
-  selector: "app-data-file-summary",
+  selector: "app-user-manual",
   standalone: true,
   imports: [CommonModule, DataSubmitterNavigationComponent],
   template: `
@@ -17,7 +17,7 @@ import { DataSubmitterNavigationComponent } from "../components/data-submitter-n
           <h1
             class="text-[#0B0B0B] text-base font-medium font-['Poppins'] capitalize"
           >
-            Data Files Summary
+            User Manual
           </h1>
 
           <!-- Search Bar -->
@@ -105,54 +105,85 @@ import { DataSubmitterNavigationComponent } from "../components/data-submitter-n
       </header>
 
       <!-- Main Content -->
-      <main class="mx-[92px] mt-[85px] mb-24">
-        <div class="bg-white rounded-lg shadow-custom px-10 py-18">
+      <main class="mx-[92px] mt-5 mb-24">
+        <div
+          class="bg-white rounded-lg shadow-custom px-72 py-22 flex flex-col items-center gap-8"
+        >
           <!-- Page Title -->
-          <h2
-            class="text-center text-[32px] font-semibold font-['Poppins'] capitalize mb-16 bg-gradient-to-r from-[#390C90] to-[#290967] bg-clip-text text-transparent"
-          >
-            Data Files Summary
-          </h2>
-
-          <!-- Stats Cards Grid -->
-          <div class="flex items-center justify-center gap-8">
-            <div
-              *ngFor="let card of summaryCards"
-              class="relative flex flex-col items-center justify-center w-[282px] h-[461px] bg-[#F4F6F8] rounded-lg px-5 py-22"
+          <div class="flex flex-col items-center gap-2 mt-22">
+            <h2
+              class="text-[32px] font-semibold font-['Poppins'] capitalize bg-gradient-to-r from-[#080114] to-[#290967] bg-clip-text text-transparent"
             >
-              <!-- Menu Icon -->
-              <button class="absolute top-4 right-4">
-                <svg
-                  class="w-1 h-6 fill-[#6C6C6C]"
-                  viewBox="0 0 4 24"
-                  xmlns="http://www.w3.org/2000/svg"
+              System User Manual
+            </h2>
+            <p
+              class="text-[#909090] text-lg font-normal font-['Poppins'] capitalize"
+            >
+              Complete Guide for Submitters
+            </p>
+          </div>
+
+          <!-- PDF Preview Area -->
+          <div
+            class="flex flex-col items-center gap-10 px-9 py-12 bg-[#F2F4F7] border border-dashed border-[#290967] rounded-lg w-full max-w-[1048px]"
+          >
+            <!-- PDF Icon Display -->
+            <div
+              class="flex items-center justify-center px-11 py-12 bg-white rounded-lg rounded-tr-[104px]"
+            >
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/d351aca3fd7c846fa9df409fcf1b1a1706b5f80f?width=318"
+                alt="PDF Document Icon"
+                class="w-40 h-46 object-contain"
+              />
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-5">
+              <button
+                class="flex items-center gap-2.5 px-2.5 py-1.5 bg-[#290967] rounded h-10 min-w-[164px] justify-center"
+              >
+                <span
+                  class="text-white text-base font-medium font-['Poppins'] capitalize"
                 >
-                  <path
-                    d="M2 0C1.73736 -5.5348e-09 1.47728 0.0517314 1.23463 0.152241C0.991981 0.25275 0.771504 0.400069 0.585787 0.585787C0.40007 0.771504 0.252751 0.991982 0.152241 1.23463C0.0517318 1.47728 0 1.73736 0 2C0 2.26264 0.0517318 2.52272 0.152241 2.76537C0.252751 3.00802 0.40007 3.2285 0.585787 3.41421C0.771504 3.59993 0.991981 3.74725 1.23463 3.84776C1.47728 3.94827 1.73736 4 2 4C2.26264 4 2.52272 3.94827 2.76537 3.84776C3.00802 3.74725 3.2285 3.59993 3.41421 3.41421C3.59993 3.2285 3.74725 3.00802 3.84776 2.76537C3.94827 2.52272 4 2.26264 4 2C4 1.73736 3.94827 1.47728 3.84776 1.23463C3.74725 0.991982 3.59993 0.771504 3.41421 0.585787C3.2285 0.400069 3.00802 0.25275 2.76537 0.152241C2.52272 0.0517314 2.26264 -5.5348e-09 2 0ZM2 10C1.46957 10 0.96086 10.2107 0.585787 10.5858C0.210714 10.9609 0 11.4696 0 12C0 12.5304 0.210714 13.0391 0.585787 13.4142C0.96086 13.7893 1.46957 14 2 14C2.53043 14 3.03914 13.7893 3.41421 13.4142C3.78929 13.0391 4 12.5304 4 12C4 11.4696 3.78929 10.9609 3.41421 10.5858C3.03914 10.2107 2.53043 10 2 10ZM2 20C1.46957 20 0.96086 20.2107 0.585787 20.5858C0.210714 20.9609 0 21.4696 0 22C0 22.5304 0.210714 23.0391 0.585787 23.4142C0.96086 23.7893 1.46957 24 2 24C2.53043 24 3.03914 23.7893 3.41421 23.4142C3.78929 23.0391 4 22.5304 4 22C4 21.4696 3.78929 20.9609 3.41421 20.5858C3.03914 20.2107 2.53043 20 2 20Z"
-                  />
-                </svg>
+                  View Online
+                </span>
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/a9b6c468fe8e99407225e2043689c10b9a455f0a?width=36"
+                  alt=""
+                  class="w-4.5 h-4.5"
+                />
               </button>
-
-              <!-- Number -->
-              <div
-                class="text-[64px] font-semibold font-['Poppins'] capitalize text-center bg-gradient-to-r from-[#8427E2] via-[#8427E2] to-[#F35353] bg-clip-text text-transparent mb-2"
+              <button
+                class="flex items-center gap-2.5 px-2.5 py-1.5 bg-[#12CEB0] rounded h-10 min-w-[164px] justify-center"
               >
-                {{ card.number }}
-              </div>
+                <span
+                  class="text-white text-base font-medium font-['Poppins'] capitalize"
+                >
+                  Download PDF
+                </span>
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/a9b6c468fe8e99407225e2043689c10b9a455f0a?width=36"
+                  alt=""
+                  class="w-4.5 h-4.5"
+                />
+              </button>
+            </div>
 
-              <!-- Title -->
-              <h3
-                class="text-[#484848] text-[28px] font-semibold font-['Poppins'] capitalize text-center mb-5 leading-tight min-h-[84px] flex items-center"
+            <!-- Version Info -->
+            <div
+              class="flex justify-between items-center w-full max-w-[978px] px-46 py-3.5 bg-[rgba(41,9,103,0.04)] border border-[#290967] rounded-lg"
+            >
+              <span
+                class="text-[#080114] text-center text-lg font-light font-['Poppins'] capitalize"
               >
-                {{ card.title }}
-              </h3>
-
-              <!-- Description -->
-              <p
-                class="text-[#6C6C6C] text-base font-normal font-['Poppins'] capitalize text-center min-h-[48px]"
+                Updated: August 2025
+              </span>
+              <span
+                class="text-[#080114] text-center text-lg font-light font-['Poppins'] capitalize"
               >
-                {{ card.description }}
-              </p>
+                Version 2.1
+              </span>
             </div>
           </div>
         </div>
@@ -160,32 +191,4 @@ import { DataSubmitterNavigationComponent } from "../components/data-submitter-n
     </div>
   `,
 })
-export class DataFileSummaryComponent {
-  summaryCards = [
-    {
-      number: "12",
-      title: "Submission Summary",
-      description: "data files awaiting entries",
-    },
-    {
-      number: "05",
-      title: "Acceptance Pending",
-      description: "files currently under acceptance",
-    },
-    {
-      number: "45",
-      title: "Review Summary",
-      description: "files awaiting and completed review",
-    },
-    {
-      number: "89",
-      title: "Accepted",
-      description: "successfully processed files",
-    },
-    {
-      number: "03",
-      title: "Rejected",
-      description: "files that require corrections",
-    },
-  ];
-}
+export class UserManualComponent {}
