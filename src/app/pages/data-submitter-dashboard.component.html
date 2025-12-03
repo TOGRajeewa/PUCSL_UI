@@ -346,17 +346,5 @@
       </main>
 
       <!-- Sidebar Navigation -->
-      <nav
-        class="fixed left-0 top-44 bg-gradient-primary rounded-r-3xl px-3 py-52 shadow-lg"
-      >
-        <div class="flex flex-col gap-8">
-          <button
-            *ngFor="let nav of navItems; let i = index"
-            [class.bg-teal-500]="i === 0"
-            class="p-2.5 rounded-lg hover:bg-teal-500 transition-colors"
-          >
-            <img [src]="nav.icon" alt="" class="w-6 h-6" />
-          </button>
-        </div>
-      </nav>
-    </div>
+      <app-data-submitter-navigation></app-data-submitter-navigation>
+</div>
