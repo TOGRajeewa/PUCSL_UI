@@ -84,7 +84,7 @@ export class DataSubmitterNavigationComponent {
     {
       label: 'Data Table Summary',
       icon: 'https://api.builder.io/api/v1/image/assets/TEMP/c8ba69aa9ba83c652dd93af762ca702c4b345901?width=48',
-      route: '/data-submitter-table-summary'
+      route: '/data-table-summary'
     },
     {
       label: 'User Manual',
