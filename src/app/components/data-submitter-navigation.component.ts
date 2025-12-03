@@ -79,7 +79,7 @@ export class DataSubmitterNavigationComponent {
     {
       label: 'Data Files',
       icon: 'https://api.builder.io/api/v1/image/assets/TEMP/c7415cd43a008aac4e7ab1eb8c869bff352ff0a9?width=48',
-      route: '/data-submitter-files'
+      route: '/data-file-summary'
     },
     {
       label: 'Data Table Summary',
