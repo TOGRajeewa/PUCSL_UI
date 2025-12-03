@@ -9,6 +9,7 @@ import { DataTableSummaryComponent } from "./pages/data-table-summary.component"
 import { UserRoleManagementComponent } from "./pages/user-role-management.component";
 import { DataSubmitterDashboardComponent } from "./pages/data-submitter-dashboard.component";
 import { DataTemplateSummaryComponent } from "./pages/data-template-summary.component";
+import { UserManualComponent } from "./pages/user-manual.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
@@ -34,5 +35,6 @@ export const routes: Routes = [
   { path: "data-file-summary", component: DataFileSummaryComponent },
   { path: "data-table-summary", component: DataTableSummaryComponent },
   { path: "user-role-management", component: UserRoleManagementComponent },
+  { path: "user-manual", component: UserManualComponent },
   { path: "**", redirectTo: "/login" },
 ];
