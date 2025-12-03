@@ -10,11 +10,20 @@ import { UserRoleManagementComponent } from "./pages/user-role-management.compon
 import { DataSubmitterDashboardComponent } from "./pages/data-submitter-dashboard.component";
 import { DataTemplateSummaryComponent } from "./pages/data-template-summary.component";
 import { UserManualComponent } from "./pages/user-manual.component";
+import { AdminDataFileSummaryComponent } from "./pages/admin-data-file-summary.component";
+import { AdminDataTableSummaryComponent } from "./pages/admin-data-table-summary.component";
+
 
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
-  { path: "login", component: LoginComponent },
-  { path: "dashboard", component: OverviewComponent },
+  { 
+    path: "login", 
+    component: LoginComponent 
+  },
+  { 
+    path: "dashboard", 
+    component: OverviewComponent 
+  },
   {
     path: "data-submitter-dashboard",
     component: DataSubmitterDashboardComponent,
@@ -23,18 +32,51 @@ export const routes: Routes = [
     path: "data-template-summary",
     component: DataTemplateSummaryComponent,
   },
-  { path: "overview", component: OverviewComponent },
-  { path: "template-management", component: TemplateManagementComponent },
+  {
+    path: "admin-data-file-summary",
+    component: AdminDataFileSummaryComponent,
+  },
+  {
+    path: "admin-data-table-summary",
+    component: AdminDataTableSummaryComponent,
+  },
+  { 
+    path: "overview", 
+    component: OverviewComponent 
+  },
+  { 
+    path: "template-management", 
+    component: TemplateManagementComponent 
+  },
   {
     path: "new-template",
     component: NewWizardComponent,
     data: { mode: "template" },
   },
-  { path: "file-management", component: FileManagementComponent },
-  { path: "new-file", component: NewWizardComponent, data: { mode: "file" } },
-  { path: "data-file-summary", component: DataFileSummaryComponent },
-  { path: "data-table-summary", component: DataTableSummaryComponent },
-  { path: "user-role-management", component: UserRoleManagementComponent },
-  { path: "user-manual", component: UserManualComponent },
+  { 
+    path: "file-management", 
+    component: FileManagementComponent 
+  },
+  { 
+    path: "new-file", 
+    component: NewWizardComponent, 
+    data: { mode: "file" } 
+  },
+  { 
+    path: "data-file-summary", 
+    component: DataFileSummaryComponent 
+  },
+  { 
+    path: "data-table-summary", 
+    component: DataTableSummaryComponent 
+  },
+  { 
+    path: "user-role-management", 
+    component: UserRoleManagementComponent 
+  },
+  { 
+    path: "user-manual", 
+    component: UserManualComponent 
+  },
   { path: "**", redirectTo: "/login" },
 ];
