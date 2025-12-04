@@ -73,6 +73,10 @@
           <div class="flex items-center justify-center gap-8">
             <div
               *ngFor="let card of summaryCards"
+              [routerLink]="card.route"
+              [class.cursor-pointer]="card.route"
+              [class.hover:shadow-lg]="card.route"
+              [class.transition-shadow]="card.route"
               class="relative flex flex-col items-center justify-center w-[282px] h-[461px] bg-[#F4F6F8] rounded-lg px-5 py-22"
             >
               <!-- Menu Icon -->

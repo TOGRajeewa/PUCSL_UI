@@ -14,27 +14,32 @@ export class DataTemplateSummaryComponent {
     {
       number: '08',
       title: 'Submission Summary',
-      description: 'templates awaiting data entries'
+      description: 'templates awaiting data entries',
+      route: '/submission-pending'
     },
     {
       number: '02',
       title: 'Acceptance Pending',
-      description: 'submissions currently under acceptance'
+      description: 'submissions currently under acceptance',
+      route: '/acceptance-pending'
     },
     {
       number: '50',
       title: 'Review Summary',
-      description: 'templates awaiting and completed review process'
+      description: 'templates awaiting and completed review process',
+      route: null
     },
     {
       number: '100',
       title: 'Accepted',
-      description: 'successfully processed submissions'
+      description: 'successfully processed submissions',
+      route: null
     },
     {
       number: '01',
       title: 'Rejected',
-      description: 'submissions that require corrections'
+      description: 'submissions that require corrections',
+      route: null
     }
   ];
 }

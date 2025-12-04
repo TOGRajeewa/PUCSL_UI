@@ -12,6 +12,8 @@ import { DataTemplateSummaryComponent } from "./pages/data-template-summary.comp
 import { UserManualComponent } from "./pages/user-manual.component";
 import { AdminDataFileSummaryComponent } from "./pages/admin-data-file-summary.component";
 import { AdminDataTableSummaryComponent } from "./pages/admin-data-table-summary.component";
+import { SubmissionPendingComponent } from "./pages/submission-pending.component";
+import { AcceptancePendingComponent } from "./pages/acceptance-pending.component";
 
 
 export const routes: Routes = [
@@ -31,6 +33,14 @@ export const routes: Routes = [
   {
     path: "data-template-summary",
     component: DataTemplateSummaryComponent,
+  },
+  {
+    path: "submission-pending",
+    component: SubmissionPendingComponent,
+  },
+  {
+    path: "acceptance-pending",
+    component: AcceptancePendingComponent,
   },
   {
     path: "admin-data-file-summary",
