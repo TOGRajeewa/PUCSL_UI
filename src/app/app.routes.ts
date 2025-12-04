@@ -15,16 +15,15 @@ import { AdminDataTableSummaryComponent } from "./pages/admin-data-table-summary
 import { SubmissionPendingComponent } from "./pages/submission-pending.component";
 import { AcceptancePendingComponent } from "./pages/acceptance-pending.component";
 
-
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
-  { 
-    path: "login", 
-    component: LoginComponent 
+  {
+    path: "login",
+    component: LoginComponent,
   },
-  { 
-    path: "dashboard", 
-    component: OverviewComponent 
+  {
+    path: "dashboard",
+    component: OverviewComponent,
   },
   {
     path: "data-submitter-dashboard",
@@ -50,43 +49,43 @@ export const routes: Routes = [
     path: "admin-data-table-summary",
     component: AdminDataTableSummaryComponent,
   },
-  { 
-    path: "overview", 
-    component: OverviewComponent 
+  {
+    path: "overview",
+    component: OverviewComponent,
   },
-  { 
-    path: "template-management", 
-    component: TemplateManagementComponent 
+  {
+    path: "template-management",
+    component: TemplateManagementComponent,
   },
   {
     path: "new-template",
     component: NewWizardComponent,
     data: { mode: "template" },
   },
-  { 
-    path: "file-management", 
-    component: FileManagementComponent 
+  {
+    path: "file-management",
+    component: FileManagementComponent,
   },
-  { 
-    path: "new-file", 
-    component: NewWizardComponent, 
-    data: { mode: "file" } 
+  {
+    path: "new-file",
+    component: NewWizardComponent,
+    data: { mode: "file" },
   },
-  { 
-    path: "data-file-summary", 
-    component: DataFileSummaryComponent 
+  {
+    path: "data-file-summary",
+    component: DataFileSummaryComponent,
   },
-  { 
-    path: "data-table-summary", 
-    component: DataTableSummaryComponent 
+  {
+    path: "data-table-summary",
+    component: DataTableSummaryComponent,
   },
-  { 
-    path: "user-role-management", 
-    component: UserRoleManagementComponent 
+  {
+    path: "user-role-management",
+    component: UserRoleManagementComponent,
   },
-  { 
-    path: "user-manual", 
-    component: UserManualComponent 
+  {
+    path: "user-manual",
+    component: UserManualComponent,
   },
   { path: "**", redirectTo: "/login" },
 ];
