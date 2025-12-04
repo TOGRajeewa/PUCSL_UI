@@ -1,40 +1,45 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
-import { DataSubmitterNavigationComponent } from '../components/data-submitter-navigation.component';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterLink, RouterModule } from "@angular/router";
+import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
 
 @Component({
-  selector: 'app-data-template-summary',
+  selector: "app-data-template-summary",
   standalone: true,
-  imports: [CommonModule, RouterModule,DataSubmitterNavigationComponent],
-  templateUrl: './data-template-summary.component.html',
+  imports: [CommonModule, RouterModule, DataSubmitterNavigationComponent],
+  templateUrl: "./data-template-summary.component.html",
 })
 export class DataTemplateSummaryComponent {
   summaryCards = [
     {
-      number: '08',
-      title: 'Submission Summary',
-      description: 'templates awaiting data entries'
+      number: "08",
+      title: "Submission Summary",
+      description: "templates awaiting data entries",
+      route: "/submission-pending",
     },
     {
-      number: '02',
-      title: 'Acceptance Pending',
-      description: 'submissions currently under acceptance'
+      number: "02",
+      title: "Acceptance Pending",
+      description: "submissions currently under acceptance",
+      route: "/acceptance-pending",
     },
     {
-      number: '50',
-      title: 'Review Summary',
-      description: 'templates awaiting and completed review process'
+      number: "50",
+      title: "Review Summary",
+      description: "templates awaiting and completed review process",
+      route: null,
     },
     {
-      number: '100',
-      title: 'Accepted',
-      description: 'successfully processed submissions'
+      number: "100",
+      title: "Accepted",
+      description: "successfully processed submissions",
+      route: null,
     },
     {
-      number: '01',
-      title: 'Rejected',
-      description: 'submissions that require corrections'
-    }
+      number: "01",
+      title: "Rejected",
+      description: "submissions that require corrections",
+      route: null,
+    },
   ];
 }
