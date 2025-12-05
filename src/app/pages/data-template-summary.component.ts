@@ -27,19 +27,19 @@ export class DataTemplateSummaryComponent {
       number: "50",
       title: "Review Summary",
       description: "templates awaiting and completed review process",
-      route: null,
+      route: "/access-review",
     },
     {
       number: "100",
       title: "Accepted",
       description: "successfully processed submissions",
-      route: null,
+      route: "/accepted-submission",
     },
     {
       number: "01",
       title: "Rejected",
       description: "submissions that require corrections",
-      route: null,
+      route: "/rejected-submission",
     },
   ];
 }
