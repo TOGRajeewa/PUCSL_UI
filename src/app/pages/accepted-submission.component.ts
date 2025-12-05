@@ -2,33 +2,30 @@ import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
-import { FileUploadModalComponent } from "../components/file-upload-modal.component";
 import { TemplateManualModalComponent } from "../components/template-manual-modal.component";
 
 @Component({
-  selector: "app-submission-pending",
+  selector: "app-accepted-submission",
   standalone: true,
   imports: [
     CommonModule,
     RouterModule,
     DataSubmitterNavigationComponent,
-    FileUploadModalComponent,
     TemplateManualModalComponent,
   ],
-  templateUrl: "./submission-pending.component.html",
+  templateUrl: "./accepted-submission.component.html",
 })
-export class SubmissionPendingComponent {
-  showUploadModal = false;
+export class AcceptedSubmissionComponent {
   showManualModal = false;
   selectedSubmission: any = null;
 
-  submissions = [
+  acceptedSubmissions = [
     {
       id: "NM_202406",
       title: "Net Metering June 2024 | Version 2.1",
       subId: "SUB-EE-2464193",
-      schedule: "Monthly",
-      dueDate: "2024 - 07 -05",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
       tags: [
         { label: "Energy", color: "#F35353" },
         { label: "Operational", color: "#128ECE" },
@@ -43,8 +40,8 @@ export class SubmissionPendingComponent {
       id: "NM_202406",
       title: "Net Metering June 2024 | Version 2.1",
       subId: "SUB-EE-2464193",
-      schedule: "Monthly",
-      dueDate: "2024 - 07 -05",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
       tags: [
         { label: "Energy", color: "#F35353" },
         { label: "Operational", color: "#128ECE" },
@@ -59,8 +56,8 @@ export class SubmissionPendingComponent {
       id: "NM_202406",
       title: "Net Metering June 2024 | Version 2.1",
       subId: "SUB-EE-2464193",
-      schedule: "Monthly",
-      dueDate: "2024 - 07 -05",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
       tags: [
         { label: "Energy", color: "#F35353" },
         { label: "Operational", color: "#128ECE" },
@@ -75,8 +72,8 @@ export class SubmissionPendingComponent {
       id: "NM_202406",
       title: "Net Metering June 2024 | Version 2.1",
       subId: "SUB-EE-2464193",
-      schedule: "Monthly",
-      dueDate: "2024 - 07 -05",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
       tags: [
         { label: "Energy", color: "#F35353" },
         { label: "Operational", color: "#128ECE" },
@@ -91,8 +88,56 @@ export class SubmissionPendingComponent {
       id: "NM_202406",
       title: "Net Metering June 2024 | Version 2.1",
       subId: "SUB-EE-2464193",
-      schedule: "Monthly",
-      dueDate: "2024 - 07 -05",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
+      tags: [
+        { label: "Energy", color: "#F35353" },
+        { label: "Operational", color: "#128ECE" },
+        { label: "Electricity", color: "#12CEB0" },
+      ],
+      fileSize: "1.2 MB",
+      pages: "24 Pages",
+      updated: "August 2025",
+      version: "Version 2.1",
+    },
+    {
+      id: "NM_202406",
+      title: "Net Metering June 2024 | Version 2.1",
+      subId: "SUB-EE-2464193",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
+      tags: [
+        { label: "Energy", color: "#F35353" },
+        { label: "Operational", color: "#128ECE" },
+        { label: "Electricity", color: "#12CEB0" },
+      ],
+      fileSize: "1.2 MB",
+      pages: "24 Pages",
+      updated: "August 2025",
+      version: "Version 2.1",
+    },
+    {
+      id: "NM_202406",
+      title: "Net Metering June 2024 | Version 2.1",
+      subId: "SUB-EE-2464193",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
+      tags: [
+        { label: "Energy", color: "#F35353" },
+        { label: "Operational", color: "#128ECE" },
+        { label: "Electricity", color: "#12CEB0" },
+      ],
+      fileSize: "1.2 MB",
+      pages: "24 Pages",
+      updated: "August 2025",
+      version: "Version 2.1",
+    },
+    {
+      id: "NM_202406",
+      title: "Net Metering June 2024 | Version 2.1",
+      subId: "SUB-EE-2464193",
+      submittedDate: "2024 - 07 -05  3:25 PM",
+      acceptedDate: "2024 - 07 -05  3:25 PM",
       tags: [
         { label: "Energy", color: "#F35353" },
         { label: "Operational", color: "#128ECE" },
@@ -105,14 +150,16 @@ export class SubmissionPendingComponent {
     },
   ];
 
-  openUploadModal(submission: any) {
-    this.selectedSubmission = submission;
-    this.showUploadModal = true;
+  onView(submission: any) {
+    console.log("View submission:", submission);
   }
 
-  closeUploadModal() {
-    this.showUploadModal = false;
-    this.selectedSubmission = null;
+  onHistory(submission: any) {
+    console.log("View history:", submission);
+  }
+
+  onDownload(submission: any) {
+    console.log("Download submission:", submission);
   }
 
   openManualModal(submission: any) {
@@ -123,15 +170,5 @@ export class SubmissionPendingComponent {
   closeManualModal() {
     this.showManualModal = false;
     this.selectedSubmission = null;
-  }
-
-  handleFileSubmit(file: File) {
-    console.log("File submitted:", file);
-    console.log("For submission:", this.selectedSubmission);
-    // Here you can implement the actual file upload logic
-    // For example: this.apiService.uploadFile(file, this.selectedSubmission.subId)
-    alert(
-      `File "${file.name}" has been uploaded successfully for ${this.selectedSubmission.id}`,
-    );
   }
 }

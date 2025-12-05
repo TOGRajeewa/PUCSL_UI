@@ -14,6 +14,9 @@ import { AdminDataFileSummaryComponent } from "./pages/admin-data-file-summary.c
 import { AdminDataTableSummaryComponent } from "./pages/admin-data-table-summary.component";
 import { SubmissionPendingComponent } from "./pages/submission-pending.component";
 import { AcceptancePendingComponent } from "./pages/acceptance-pending.component";
+import { AcceptedSubmissionComponent } from "./pages/accepted-submission.component";
+import { RejectedSubmissionComponent } from "./pages/rejected-submission.component";
+import { AccessReviewComponent } from "./pages/access-review.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
@@ -40,6 +43,18 @@ export const routes: Routes = [
   {
     path: "acceptance-pending",
     component: AcceptancePendingComponent,
+  },
+  {
+    path: "accepted-submission",
+    component: AcceptedSubmissionComponent,
+  },
+  {
+    path: "rejected-submission",
+    component: RejectedSubmissionComponent,
+  },
+  {
+    path: "access-review",
+    component: AccessReviewComponent,
   },
   {
     path: "admin-data-file-summary",
