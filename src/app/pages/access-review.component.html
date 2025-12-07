@@ -3,8 +3,10 @@
   <app-data-submitter-navigation></app-data-submitter-navigation>
 
   <!-- Header -->
-  <header class="bg-white shadow-custom rounded-lg mx-5 mt-5 px-6 py-4">
-    <div class="flex items-center justify-between">
+  <header
+    class="bg-white shadow-custom rounded-lg mx-3 sm:mx-4 md:mx-5 mt-3 sm:mt-4 md:mt-5 px-3 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4"
+  >
+    <div class="flex items-center justify-between gap-2 md:gap-4">
       <!-- Breadcrumb -->
       <div class="flex items-center gap-3">
         <button
@@ -54,7 +56,7 @@
 
       <!-- Search Bar -->
       <div
-        class="flex items-center gap-2 bg-[#F2F4F7] rounded px-3 py-2.5 w-[448px]"
+        class="hidden md:flex items-center gap-2 bg-[#F2F4F7] rounded px-3 py-2 flex-1 max-w-md"
       >
         <svg
           class="w-4 h-4 fill-[#6C6C6C] opacity-95"
@@ -108,7 +110,7 @@
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/6d0fdfb14db23e59332a259e103b8b309a70e867?width=84"
             alt="User"
-            class="w-[42px] h-[42px] rounded-full shadow-avatar object-cover"
+            class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full shadow-avatar object-cover"
           />
           <div>
             <p
@@ -355,3 +357,21 @@
     </div>
   </main>
 </div>
+
+<!-- Acceptance Modal -->
+<app-acceptance-modal
+  [isOpen]="isModalOpen"
+  [submission]="selectedSubmission"
+  (close)="closeModal()"
+  (accept)="onAccept()"
+  (reject)="onReject()"
+  (download)="onModalDownload()"
+  (saveAsDraft)="onSaveAsDraft()"
+></app-acceptance-modal>
+
+<!-- History Modal -->
+<app-history-modal
+  [isOpen]="isHistoryModalOpen"
+  [submission]="selectedSubmission"
+  (close)="closeHistoryModal()"
+></app-history-modal>
