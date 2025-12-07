@@ -3,6 +3,9 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { DataSubmitterNavigationComponent } from "../components/data-submitter-navigation.component";
 import { TemplateManualModalComponent } from "../components/template-manual-modal.component";
+import { RejectionModalComponent } from "../components/rejection-modal.component";
+import { HistoryModalComponent } from "../components/history-modal.component";
+import { FileUploadModalComponent } from "../components/file-upload-modal.component";
 
 @Component({
   selector: "app-rejected-submission",
@@ -12,11 +15,17 @@ import { TemplateManualModalComponent } from "../components/template-manual-moda
     RouterModule,
     DataSubmitterNavigationComponent,
     TemplateManualModalComponent,
+    RejectionModalComponent,
+    HistoryModalComponent,
+    FileUploadModalComponent,
   ],
   templateUrl: "./rejected-submission.component.html",
 })
 export class RejectedSubmissionComponent {
   showManualModal = false;
+  showRejectionModal = false;
+  showHistoryModal = false;
+  showFileUploadModal = false;
   selectedSubmission: any = null;
 
   rejectedSubmissions = [
@@ -87,11 +96,13 @@ export class RejectedSubmissionComponent {
   ];
 
   onView(submission: any) {
-    console.log("View submission:", submission);
+    this.selectedSubmission = submission;
+    this.showRejectionModal = true;
   }
 
   onHistory(submission: any) {
-    console.log("View history:", submission);
+    this.selectedSubmission = submission;
+    this.showHistoryModal = true;
   }
 
   onDownload(submission: any) {
@@ -103,7 +114,8 @@ export class RejectedSubmissionComponent {
   }
 
   onResubmit(submission: any) {
-    console.log("Resubmit submission:", submission);
+    this.selectedSubmission = submission;
+    this.showFileUploadModal = true;
   }
 
   openManualModal(submission: any) {
@@ -114,5 +126,19 @@ export class RejectedSubmissionComponent {
   closeManualModal() {
     this.showManualModal = false;
     this.selectedSubmission = null;
+  }
+
+  closeRejectionModal() {
+    this.showRejectionModal = false;
+    this.selectedSubmission = null;
+  }
+
+  onDownloadErrorReport() {
+    console.log("Download error report:", this.selectedSubmission);
+  }
+
+  onProceedToResubmit() {
+    console.log("Proceed to resubmit:", this.selectedSubmission);
+    this.closeRejectionModal();
   }
 }
