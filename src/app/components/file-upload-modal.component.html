@@ -1,4 +1,14 @@
+<!-- Confirmation Modal -->
+<app-file-submission-confirmation-modal
+  *ngIf="showConfirmationModal && fileDetails"
+  [fileDetails]="fileDetails"
+  (cancel)="onConfirmationCancel()"
+  (confirm)="onConfirmationConfirm()"
+></app-file-submission-confirmation-modal>
+
+<!-- File Upload Modal -->
 <div
+  *ngIf="!showConfirmationModal"
   class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
   (click)="onBackdropClick($event)"
 >

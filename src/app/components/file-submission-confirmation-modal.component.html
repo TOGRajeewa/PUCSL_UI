@@ -1,0 +1,176 @@
+<div
+  class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50 p-4"
+  (click)="onBackdropClick($event)"
+>
+  <div class="relative w-full max-w-[1544px] mx-auto">
+    <!-- Modal Container -->
+    <div class="bg-[#F4F6F8] rounded-lg shadow-2xl overflow-hidden px-12 py-15">
+      <!-- Success Message -->
+      <div
+        class="w-full rounded-lg border border-teal-500 bg-white px-8 py-6 mb-10"
+      >
+        <div class="flex items-center gap-8">
+          <!-- Success Icon -->
+          <svg
+            class="w-11 h-11 flex-shrink-0"
+            viewBox="0 0 45 45"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M22.5 0C10.0748 0 0 10.0748 0 22.5C0 34.9252 10.0748 45 22.5 45C34.9252 45 45 34.9252 45 22.5C45 10.0748 34.9252 0 22.5 0ZM32.2182 15.1523L21.6412 29.8175C21.4933 30.0239 21.2985 30.192 21.0727 30.308C20.8469 30.4239 20.5967 30.4844 20.3429 30.4844C20.0891 30.4844 19.8389 30.4239 19.6131 30.308C19.3874 30.192 19.1925 30.0239 19.0446 29.8175L12.7818 21.139C12.591 20.8728 12.7818 20.5011 13.1083 20.5011H15.4637C15.976 20.5011 16.4632 20.7472 16.7645 21.1691L20.3404 26.1311L28.2355 15.1825C28.5368 14.7656 29.019 14.5145 29.5363 14.5145H31.8917C32.2182 14.5145 32.409 14.8862 32.2182 15.1523Z"
+                fill="#12CEB0"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="45" height="45" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <!-- Success Text -->
+          <div class="flex flex-col gap-1">
+            <h3
+              class="text-teal-500 text-lg font-medium font-['Poppins'] capitalize"
+            >
+              Upload Successful
+            </h3>
+            <p
+              class="text-teal-500 text-lg font-light font-['Poppins'] capitalize"
+            >
+              Your file has been successfully uploaded and validated. Ready for
+              submission.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation Section -->
+      <div
+        class="w-full rounded-lg border-2 border-dashed border-primary-500 bg-white px-10 py-12 flex flex-col items-center gap-12"
+      >
+        <!-- Title -->
+        <h2
+          class="text-gray-900 text-2xl font-medium font-['Poppins'] capitalize text-center"
+        >
+          Final Submission Confirmation
+        </h2>
+
+        <!-- File Details Card -->
+        <div
+          class="w-full rounded-lg bg-white border border-gray-200 px-6 py-5"
+        >
+          <div class="flex items-center justify-between">
+            <!-- File Icon and Details -->
+            <div class="flex items-center gap-9">
+              <!-- File Icon -->
+              <svg
+                class="w-14 h-14 flex-shrink-0"
+                viewBox="0 0 57 57"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M35.625 7.125H11.875C10.6815 7.125 9.53672 7.59911 8.69968 8.43615C7.86264 9.27319 7.38853 10.418 7.38853 11.6114V45.3886C7.38853 46.582 7.86264 47.7268 8.69968 48.5638C9.53672 49.4009 10.6815 49.875 11.875 49.875H45.125C46.3185 49.875 47.4633 49.4009 48.3003 48.5638C49.1374 47.7268 49.6115 46.582 49.6115 45.3886V21.375L35.625 7.125Z"
+                  fill="#4285F4"
+                />
+                <path d="M35.625 7.125V21.375H49.6115" fill="#F1F1F1" />
+                <path
+                  d="M35.625 30.875L21.375 45.125M21.375 30.875L35.625 45.125"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+
+              <!-- File Info -->
+              <div class="flex flex-col gap-2">
+                <h4
+                  class="text-gray-800 text-base font-medium font-['Poppins'] capitalize"
+                >
+                  {{ fileDetails.name }}
+                </h4>
+                <p
+                  class="text-gray-700 text-sm font-normal font-['Poppins'] capitalize"
+                >
+                  {{ formatFileSize(fileDetails.size) }} | Uploaded
+                  {{ formatUploadDate(fileDetails.uploadDate) }} |
+                  {{ fileDetails.recordCount }} Records
+                </p>
+              </div>
+            </div>
+
+            <!-- Validation Status -->
+            <div class="flex items-center gap-9">
+              <svg
+                class="w-11 h-11"
+                viewBox="0 0 44 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M41.6423 6.1875H38.2097C37.7284 6.1875 37.2717 6.40848 36.9771 6.78661L16.7302 32.4353L7.02172 20.1339C6.87486 19.9475 6.68766 19.7967 6.47418 19.6929C6.2607 19.5892 6.02649 19.5351 5.78913 19.5348H2.35654C2.02752 19.5348 1.84583 19.9129 2.04717 20.1683L15.4976 37.2085C16.1262 38.004 17.3342 38.004 17.9677 37.2085L41.9516 6.81607C42.153 6.56563 41.9713 6.1875 41.6423 6.1875Z"
+                  fill="#10B99E"
+                />
+              </svg>
+              <span
+                class="text-[#10B99E] text-lg font-medium font-['Poppins'] uppercase"
+              >
+                All Validation Passed
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center justify-center gap-4 mt-12">
+        <button
+          (click)="onCancel()"
+          class="flex items-center justify-center gap-2.5 w-auto px-5 h-10 rounded border border-orange-500 bg-white hover:bg-gray-50 transition-colors"
+        >
+          <svg
+            class="w-[18px] h-[18px]"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.0625 6.1875L6.1875 5.0625L9 7.875L11.8125 5.0625L12.9375 6.1875L10.125 9L12.9375 11.8125L11.8125 12.9375L9 10.125L6.1875 12.9375L5.0625 11.8125L7.875 9L5.0625 6.1875Z"
+              fill="#CE5212"
+            />
+          </svg>
+          <span
+            class="text-orange-500 text-base font-semibold font-['Poppins'] capitalize"
+          >
+            Cancel
+          </span>
+        </button>
+
+        <button
+          (click)="onConfirm()"
+          class="flex items-center justify-center gap-2.5 px-4 h-10 rounded bg-orange-500 hover:bg-orange-600 transition-colors"
+        >
+          <span
+            class="text-white text-base font-medium font-['Poppins'] capitalize"
+          >
+            Confirm & Submit
+          </span>
+          <svg
+            class="w-[18px] h-[18px]"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.3125 12.9375L12.9375 7.3125L11.8125 6.1875L7.3125 10.6875L6.1875 9.5625L5.0625 10.6875L7.3125 12.9375Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
