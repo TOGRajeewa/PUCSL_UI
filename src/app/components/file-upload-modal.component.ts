@@ -1,10 +1,14 @@
 import { Component, EventEmitter, Output, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import {
+  FileSubmissionConfirmationModalComponent,
+  FileDetails,
+} from "./file-submission-confirmation-modal.component";
 
 @Component({
   selector: "app-file-upload-modal",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FileSubmissionConfirmationModalComponent],
   templateUrl: "./file-upload-modal.component.html",
 })
 export class FileUploadModalComponent {
@@ -14,6 +18,8 @@ export class FileUploadModalComponent {
 
   selectedFile: File | null = null;
   isDragging = false;
+  showConfirmationModal = false;
+  fileDetails: FileDetails | null = null;
 
   onDragOver(event: DragEvent) {
     event.preventDefault();
@@ -73,8 +79,25 @@ export class FileUploadModalComponent {
 
   onProceedToSubmit() {
     if (this.selectedFile) {
+      this.fileDetails = {
+        name: this.selectedFile.name,
+        size: this.selectedFile.size,
+        uploadDate: new Date(),
+        recordCount: 1247,
+      };
+      this.showConfirmationModal = true;
+    }
+  }
+
+  onConfirmationCancel() {
+    this.showConfirmationModal = false;
+  }
+
+  onConfirmationConfirm() {
+    if (this.selectedFile) {
       this.fileSubmit.emit(this.selectedFile);
       this.selectedFile = null;
+      this.showConfirmationModal = false;
       this.close.emit();
     }
   }
